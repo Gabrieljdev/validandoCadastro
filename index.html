@@ -3,11 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial</title>
+    <title>Conheça Pessoas</title>
+   <link rel="stylesheet" href="assets/index.css">
 </head>
 <body>
 
     <h1 id="mensagem_bem_vindo"></h1>
+    
+    <p>Bem-vindo ao nosso site de conhecer pessoas! Aqui você pode fazer novas amizades, encontrar pessoas com interesses semelhantes e muito mais.</p>
+
+    <h2>Perfis em Destaque</h2>
+    <div id="perfis">
+        <div class="perfil">
+            <h3>Maria</h3>
+            <p>Idade: 25 anos</p>
+            <p>Interesses: Viagens, Música, Fotografia</p>
+            <button class="botao_conhecer">Conhecer</button>
+            <button class="botao_excluir">Excluir</button>
+        </div>
+        <div class="perfil">
+            <h3>João</h3>
+            <p>Idade: 30 anos</p>
+            <p>Interesses: Tecnologia, Esportes, Cinema</p>
+            <button class="botao_conhecer">Conhecer</button>
+            <button class="botao_excluir">Excluir</button>
+        </div>
+        <div class="perfil">
+            <h3>Ana</h3>
+            <p>Idade: 28 anos</p>
+            <p>Interesses: Culinária, Literatura, Artes</p>
+            <button class="botao_conhecer">Conhecer</button>
+            <button class="botao_excluir">Excluir</button>
+        </div>
+    </div>
+
+    <h2>Cadastre-se</h2>
+    <p>Quer fazer parte da nossa comunidade? Clique no botão abaixo para se cadastrar!</p>
+    <button id="botao_cadastro">Cadastrar</button>
+    
+    <h2>Ir para Login</h2>
+    <button id="botao_login">Ir para Login</button>
 
     <script>
         // Recuperar o nome do localStorage
@@ -17,6 +52,34 @@
         if (nome) {
             document.getElementById('mensagem_bem_vindo').innerText = `Seja bem-vindo, ${nome}!`;
         }
+
+        // Adicionar evento de clique ao botão de login
+        document.getElementById('botao_login').addEventListener('click', () => {
+            window.location.href = 'login.html'; // Redireciona para a página de login
+        });
+
+        // Adicionar evento de clique ao botão de cadastro
+        document.getElementById('botao_cadastro').addEventListener('click', () => {
+            window.location.href = 'cadastrar.html'; // Redireciona para a página de cadastro
+        });
+
+        // Função para lidar com o botão "Conhecer"
+        const conhecerButtons = document.querySelectorAll('.botao_conhecer');
+        conhecerButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Você escolheu conhecer essa pessoa!'); // Ação ao clicar em "Conhecer"
+            });
+        });
+
+        // Função para lidar com o botão "Excluir"
+        const excluirButtons = document.querySelectorAll('.botao_excluir');
+        excluirButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const perfil = button.parentElement; // Obtém o perfil correspondente
+                perfil.remove(); // Remove o perfil da lista
+                alert('Perfil excluído!'); // Mensagem de confirmação
+            });
+        });
     </script>
 </body>
 </html>
