@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+</head>
+<body>
+
+    <h1 id="mensagem_bem_vindo"></h1>
+
+    <script>
+        // Recuperar o nome do localStorage
+        let nome = localStorage.getItem('nome');
+
+        // Verificar se o nome existe e exibir a mensagem
+        if (nome) {
+            document.getElementById('mensagem_bem_vindo').innerText = `Seja bem-vindo, ${nome}!`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="assets/cadastro.css">
+</head>
+<body>
+
+    <h1>Faça seu cadastro</h1>
+
+    <form>
+        <label for="imagem">Foto de perfil:</label>
+        <input type="file" name="imagem" id="imagem" accept="image/*" required>
+        
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required>
+
+        <label for="idade">Idade:</label>
+        <input type="number" name="idade" id="idade" min="18" max="100" required>
+
+        <label for="genero">Gênero:</label>
+        <select name="genero" id="genero" required>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="outro">Outro</option>
+        </select>
+
+        <label for="bio">Biografia:</label>
+        <textarea name="bio" id="bio" rows="4" required></textarea>
+
+        <label for="interesses">Interesses:</label>
+        <input type="text" name="interesses" id="interesses" placeholder="Ex: Música, Viagens, Esportes">
+
+        <button type="button" id="botao_enviar">Cadastrar</button>
+    </form>
+    <script src="app.js">
+
+
+    </script>
+</body>
+</html>
+
+<!-- Explicações das Alterações
+Armazenamento com localStorage: O nome é armazenado no localStorage usando localStorage.setItem('nome', nome);. Isso permite que você mantenha o nome mesmo após a página ser recarregada.
+
+Recuperação do Nome: No index.html, o nome é recuperado com localStorage.getItem('nome') e exibido no <h1>.
+
+Verificação: Antes de exibir a mensagem, verificamos se o nome existe para evitar erros.
+
+Considerações Finais
+Limpeza do localStorage: Você pode querer limpar o localStorage quando o usuário fizer logout ou quando for apropriado, usando localStorage.removeItem('nome'); ou localStorage.clear();.
+Segurança: Lembre-se que o localStorage não é seguro para armazenar informações sensíveis, pois os dados podem ser acessados pelo JavaScript do navegador. -->
